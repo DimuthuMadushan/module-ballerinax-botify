@@ -3116,7 +3116,8 @@
                     "name": "identifier",
                     "type": "string",
                     "in": "path",
-                    "required": true
+                    "required": true,
+                    "description": "Identifier of the saved, account or recommended filter"
                 }
             ]
         },
@@ -3993,38 +3994,55 @@
             "properties": {
                 "uuid": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Unique identifier of the saved explorer"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the saved explorer"
                 },
                 "type": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Type of the saved explorer"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Description of the saved explorer"
                 },
                 "query": {
-                    "type": "object"
+                    "type": "object",
+                    "description": "Query stored in the saved explorer"
                 },
                 "created_by": {
-                    "readOnly": true,
-                    "$ref": "#/definitions/User"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/User"
+                        }
+                    ],
+                    "description": "User who created the saved explorer",
+                    "readOnly": true
                 },
                 "modified_by": {
-                    "readOnly": true,
-                    "$ref": "#/definitions/User"
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/User"
+                        }
+                    ],
+                    "description": "User who last modified the saved explorer",
+                    "readOnly": true
                 },
                 "created_date": {
                     "type": "string",
                     "format": "date-time",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Date and time the saved explorer was created"
                 },
                 "modified_date": {
                     "type": "string",
                     "format": "date-time",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Date and time the saved explorer was last modified"
                 }
             },
             "type": "object",
@@ -5045,42 +5063,52 @@
             "properties": {
                 "job_id": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Unique identifier of the job"
                 },
                 "job_type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of the job, which determines the payload it expects"
                 },
                 "job_url": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "URL to retrieve the job"
                 },
                 "job_status": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Current status of the job"
                 },
                 "results": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Results of the job once it has finished"
                 },
                 "date_created": {
                     "type": "string",
                     "format": "date-time",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Date and time the job was created"
                 },
                 "payload": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Payload the job was created with"
                 },
                 "user": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "User who created the job"
                 },
                 "metadata": {
-                    "type": "object"
+                    "type": "object",
+                    "description": "Additional metadata of the job"
                 },
                 "crawl_date": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Date of the crawl the job relates to"
                 }
             },
             "type": "object",
@@ -5093,7 +5121,8 @@
             "properties": {
                 "segments": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Public metadata of the segments defined for the analysis"
                 }
             },
             "type": "object",
@@ -5762,16 +5791,19 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Fields to return for each row of the result"
                 },
                 "filters": {
-                    "type": "object"
+                    "type": "object",
+                    "description": "Filter expression restricting the rows returned by the query"
                 },
                 "sort": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Fields to sort the results by, in order of priority"
                 }
             },
             "type": "object",
@@ -6193,30 +6225,37 @@
         "ProjectSavedFilter": {
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the saved filter"
                 },
                 "filters": {
-                    "type": "object"
+                    "type": "object",
+                    "description": "Filter expression stored in the saved filter"
                 },
                 "identifier": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Identifier of the saved filter"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Description of the saved filter"
                 },
                 "type": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Type of the saved filter"
                 },
                 "project_name": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Name of the project the filter belongs to"
                 },
                 "created_date": {
                     "type": "string",
                     "format": "date-time",
-                    "readOnly": true
+                    "readOnly": true,
+                    "description": "Date and time the saved filter was created"
                 }
             },
             "type": "object",
@@ -6444,7 +6483,8 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Results returned for the query"
                 }
             },
             "type": "object",
@@ -7480,7 +7520,8 @@
                             "description": "If available, detailed error",
                             "type": "object"
                         }
-                    }
+                    },
+                    "description": "Error details returned by the API"
                 }
             }
         }
@@ -7489,7 +7530,8 @@
         "DjangoRestToken": {
             "type": "apiKey",
             "name": "Authorization",
-            "in": "header"
+            "in": "header",
+            "description": "Botify API token, sent as `Token <your-token>` (not Bearer)"
         }
     },
     "security": [

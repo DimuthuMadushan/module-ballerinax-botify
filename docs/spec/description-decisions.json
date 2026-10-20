@@ -1,52 +1,185 @@
 {
   "operations": {
-    "getProjectAnalyses": {"summary": "List project analyses"},
-    "launchAnalysisCreate": {"summary": "Create and launch an analysis"},
-    "getProjectAnalysesLight": {"summary": "List project analyses in light format"},
-    "getAnalysisSummary": {"summary": "Get analysis details"},
-    "getCrawlStatistics": {"summary": "Get crawl statistics"},
-    "getCrawlStatisticsByFrequency": {"summary": "Get crawl statistics by time frequency"},
-    "getCrawlStatisticsUrls": {"summary": "List latest crawled URLs"},
-    "getGanalyticsOrphanURLs": {"summary": "List Google Analytics orphan URLs"},
-    "getLinksPercentiles": {"summary": "Get inlinks percentiles"},
-    "getPageRankLost": {"summary": "Get lost PageRank"},
-    "getScoring": {"summary": "Get scoring summary"},
-    "getKeywordsStats": {"summary": "Get search console clicks and impressions"},
-    "getSitemapsReport": {"summary": "Get sitemaps report"},
-    "getSitemapsSamplesOutOfConfig": {"summary": "List sitemap URLs outside the crawl configuration"},
-    "getSitemapsSamplesSitemapsOnly": {"summary": "List URLs found only in sitemaps"},
-    "getLinksTopDomains": {"summary": "List top linking domains"},
-    "getLinksTopSubdomains": {"summary": "List top linking subdomains"},
-    "getVisitsOrphanURLs": {"summary": "List visits orphan URLs"},
-    "pauseAnalysis": {"summary": "Pause an analysis"},
-    "resumeAnalysis": {"summary": "Resume an analysis"},
-    "getAnalysisSegments": {"summary": "Get analysis segments"},
-    "getRobotsTxtIndexesView": {"summary": "List robots.txt files"},
-    "getRobotsTxtFileView": {"summary": "Get robots.txt file content"},
-    "getUrls": {"summary": "Query analysis URLs"},
-    "getUrlsAggs": {"summary": "Run analysis URL aggregation queries"},
-    "getUrlAI": {"summary": "Get AI suggestions for a URL"},
-    "getUrlsDatamodel": {"summary": "Get analysis datamodel"},
-    "getUrlsDatasets": {"summary": "Get analysis datasets"},
-    "getUrlsExports": {"summary": "List URL exports"},
-    "createUrlsExport": {"summary": "Create a URL export"},
-    "getUrlsExportStatus": {"summary": "Get URL export status"},
-    "getUrlHTML": {"summary": "Get URL HTML"},
-    "getUrlDetail": {"summary": "Get URL details"},
-    "getJobs": {"summary": "List jobs"},
-    "createJob": {"summary": "Create a job"},
-    "getJob": {"summary": "Get a job"},
-    "getUserProjects": {"summary": "List user projects"},
-    "getAccountSavedFilters": {"summary": "List account saved filters"},
-    "getProjectCollections": {"summary": "List project collections"},
-    "getCollectionDetail": {"summary": "Get collection details"},
-    "getSavedFilters": {"summary": "List project saved filters"},
-    "getFilter": {"summary": "Get a saved filter"},
-    "projectQuery": {"summary": "Query project collections"},
-    "getSavedExplorers": {"summary": "List saved explorers"},
-    "getProjectUrlsAggs": {"summary": "Run project aggregation queries"},
-    "cloneValuesList": {"summary": "Clone keyword groups to another project"},
-    "getDatasourcesSummaryByProjects": {"summary": "Get datasources summary by project"},
-    "getAllUserProjects": {"summary": "List all user projects"}
+    "getProjectAnalyses": {
+      "summary": "List project analyses"
+    },
+    "launchAnalysisCreate": {
+      "summary": "Create and launch an analysis"
+    },
+    "getProjectAnalysesLight": {
+      "summary": "List project analyses in light format"
+    },
+    "getAnalysisSummary": {
+      "summary": "Get analysis details"
+    },
+    "getCrawlStatistics": {
+      "summary": "Get crawl statistics"
+    },
+    "getCrawlStatisticsByFrequency": {
+      "summary": "Get crawl statistics by time frequency"
+    },
+    "getCrawlStatisticsUrls": {
+      "summary": "List latest crawled URLs"
+    },
+    "getGanalyticsOrphanURLs": {
+      "summary": "List Google Analytics orphan URLs"
+    },
+    "getLinksPercentiles": {
+      "summary": "Get inlinks percentiles"
+    },
+    "getPageRankLost": {
+      "summary": "Get lost PageRank"
+    },
+    "getScoring": {
+      "summary": "Get scoring summary"
+    },
+    "getKeywordsStats": {
+      "summary": "Get search console clicks and impressions"
+    },
+    "getSitemapsReport": {
+      "summary": "Get sitemaps report"
+    },
+    "getSitemapsSamplesOutOfConfig": {
+      "summary": "List sitemap URLs outside the crawl configuration"
+    },
+    "getSitemapsSamplesSitemapsOnly": {
+      "summary": "List URLs found only in sitemaps"
+    },
+    "getLinksTopDomains": {
+      "summary": "List top linking domains"
+    },
+    "getLinksTopSubdomains": {
+      "summary": "List top linking subdomains"
+    },
+    "getVisitsOrphanURLs": {
+      "summary": "List visits orphan URLs"
+    },
+    "pauseAnalysis": {
+      "summary": "Pause an analysis"
+    },
+    "resumeAnalysis": {
+      "summary": "Resume an analysis"
+    },
+    "getAnalysisSegments": {
+      "summary": "Get analysis segments"
+    },
+    "getRobotsTxtIndexesView": {
+      "summary": "List robots.txt files"
+    },
+    "getRobotsTxtFileView": {
+      "summary": "Get robots.txt file content"
+    },
+    "getUrls": {
+      "summary": "Query analysis URLs"
+    },
+    "getUrlsAggs": {
+      "summary": "Run analysis URL aggregation queries"
+    },
+    "getUrlAI": {
+      "summary": "Get AI suggestions for a URL"
+    },
+    "getUrlsDatamodel": {
+      "summary": "Get analysis datamodel"
+    },
+    "getUrlsDatasets": {
+      "summary": "Get analysis datasets"
+    },
+    "getUrlsExports": {
+      "summary": "List URL exports"
+    },
+    "createUrlsExport": {
+      "summary": "Create a URL export"
+    },
+    "getUrlsExportStatus": {
+      "summary": "Get URL export status"
+    },
+    "getUrlHTML": {
+      "summary": "Get URL HTML"
+    },
+    "getUrlDetail": {
+      "summary": "Get URL details"
+    },
+    "getJobs": {
+      "summary": "List jobs"
+    },
+    "createJob": {
+      "summary": "Create a job"
+    },
+    "getJob": {
+      "summary": "Get a job"
+    },
+    "getUserProjects": {
+      "summary": "List user projects"
+    },
+    "getAccountSavedFilters": {
+      "summary": "List account saved filters"
+    },
+    "getProjectCollections": {
+      "summary": "List project collections"
+    },
+    "getCollectionDetail": {
+      "summary": "Get collection details"
+    },
+    "getSavedFilters": {
+      "summary": "List project saved filters"
+    },
+    "getFilter": {
+      "summary": "Get a saved filter"
+    },
+    "projectQuery": {
+      "summary": "Query project collections"
+    },
+    "getSavedExplorers": {
+      "summary": "List saved explorers"
+    },
+    "getProjectUrlsAggs": {
+      "summary": "Run project aggregation queries"
+    },
+    "cloneValuesList": {
+      "summary": "Clone keyword groups to another project"
+    },
+    "getDatasourcesSummaryByProjects": {
+      "summary": "Get datasources summary by project"
+    },
+    "getAllUserProjects": {
+      "summary": "List all user projects"
+    }
+  },
+  "properties": {
+    "Query.filters": "Filter expression restricting the rows returned by the query",
+    "Query.sort": "Fields to sort the results by, in order of priority",
+    "Query.fields": "Fields to return for each row of the result",
+    "SavedExplorer.uuid": "Unique identifier of the saved explorer",
+    "SavedExplorer.name": "Name of the saved explorer",
+    "SavedExplorer.type": "Type of the saved explorer",
+    "SavedExplorer.description": "Description of the saved explorer",
+    "SavedExplorer.query": "Query stored in the saved explorer",
+    "SavedExplorer.created_by": "User who created the saved explorer",
+    "SavedExplorer.modified_by": "User who last modified the saved explorer",
+    "SavedExplorer.created_date": "Date and time the saved explorer was created",
+    "SavedExplorer.modified_date": "Date and time the saved explorer was last modified",
+    "JobResults.job_id": "Unique identifier of the job",
+    "JobResults.job_type": "Type of the job, which determines the payload it expects",
+    "JobResults.job_url": "URL to retrieve the job",
+    "JobResults.job_status": "Current status of the job",
+    "JobResults.results": "Results of the job once it has finished",
+    "JobResults.date_created": "Date and time the job was created",
+    "JobResults.payload": "Payload the job was created with",
+    "JobResults.user": "User who created the job",
+    "JobResults.metadata": "Additional metadata of the job",
+    "JobResults.crawl_date": "Date of the crawl the job relates to",
+    "AnalysisSegments.segments": "Public metadata of the segments defined for the analysis",
+    "ProjectSavedFilter.name": "Name of the saved filter",
+    "ProjectSavedFilter.filters": "Filter expression stored in the saved filter",
+    "ProjectSavedFilter.identifier": "Identifier of the saved filter",
+    "ProjectSavedFilter.description": "Description of the saved filter",
+    "ProjectSavedFilter.type": "Type of the saved filter",
+    "ProjectSavedFilter.project_name": "Name of the project the filter belongs to",
+    "ProjectSavedFilter.created_date": "Date and time the saved filter was created",
+    "QueryResponses.results": "Results returned for the query",
+    "DefaultPayload.error": "Error details returned by the API"
+  },
+  "parameters": {
+    "getFilter.path.identifier": "Identifier of the saved, account or recommended filter"
   }
 }

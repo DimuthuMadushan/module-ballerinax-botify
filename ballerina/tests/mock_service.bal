@@ -400,9 +400,11 @@ public type UrlsPageOk record {|
 
 # default payload for object for all HTTP codes that are not covered individually
 public type DefaultPayload record {
+    # Error details returned by the API
     DefaultPayloadError 'error?;
 };
 
+# Error details returned by the API
 public type DefaultPayloadError record {
     # If available, detailed error
     @jsondata:Name {value: "error_detail"}

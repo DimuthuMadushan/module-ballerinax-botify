@@ -710,6 +710,7 @@ public isolated client class Client {
     #
     # + username - User's identifier
     # + projectSlug - Project's identifier
+    # + identifier - Identifier of the saved, account or recommended filter
     # + headers - Headers to be sent with the request 
     # + return - error payload 
     remote isolated function getFilter(string username, string projectSlug, string identifier, map<string|string[]> headers = {}) returns ProjectSavedFilter|error {

@@ -52,8 +52,11 @@ public type SubscriptionPlan record {
 
 # Query
 public type Query record {
+    # Filter expression restricting the rows returned by the query
     record {} filters?;
+    # Fields to sort the results by, in order of priority
     string[] sort?;
+    # Fields to return for each row of the result
     string[] fields?;
 };
 
@@ -75,17 +78,26 @@ public type GetUrlsAggsQueries record {
 
 # Project's saved explorer
 public type SavedExplorer record {
+    # Query stored in the saved explorer
     record {} query;
+    # Name of the saved explorer
     string name;
+    # User who last modified the saved explorer
     @jsondata:Name {value: "modified_by"}
     User modifiedBy?;
+    # Description of the saved explorer
     string description?;
+    # Date and time the saved explorer was created
     @jsondata:Name {value: "created_date"}
     string createdDate?;
+    # Type of the saved explorer
     string 'type?;
+    # Date and time the saved explorer was last modified
     @jsondata:Name {value: "modified_date"}
     string modifiedDate?;
+    # Unique identifier of the saved explorer
     string uuid?;
+    # User who created the saved explorer
     @jsondata:Name {value: "created_by"}
     User createdBy?;
 };
@@ -236,21 +248,31 @@ public type CrawlOrphanURLs record {
 
 # Job results
 public type JobResults record {
+    # Type of the job, which determines the payload it expects
     @jsondata:Name {value: "job_type"}
     string jobType;
+    # Current status of the job
     @jsondata:Name {value: "job_status"}
     string jobStatus?;
+    # Additional metadata of the job
     record {} metadata?;
+    # Payload the job was created with
     string payload?;
+    # Unique identifier of the job
     @jsondata:Name {value: "job_id"}
     string jobId?;
+    # Date and time the job was created
     @jsondata:Name {value: "date_created"}
     string dateCreated?;
+    # Date of the crawl the job relates to
     @jsondata:Name {value: "crawl_date"}
     string crawlDate?;
+    # URL to retrieve the job
     @jsondata:Name {value: "job_url"}
     string jobUrl?;
+    # Results of the job once it has finished
     string results?;
+    # User who created the job
     string user?;
 };
 
@@ -456,6 +478,8 @@ public type LinksPercentiles record {
 
 # Provides API key configurations needed when communicating with a remote HTTP endpoint.
 public type ApiKeysConfig record {|
+    # Botify API token, sent as `Token <your-token>` (not Bearer)
+    @display {label: "", kind: "password"}
     string authorization;
 |};
 
@@ -470,6 +494,7 @@ public type AnalysisSegmentsList record {
 
 # Analysis Segments
 public type AnalysisSegments record {
+    # Public metadata of the segments defined for the analysis
     string segments?;
 };
 
@@ -806,13 +831,20 @@ public type UrlsExportsList record {
 
 # Project's saved UrlFilter
 public type ProjectSavedFilter record {
+    # Identifier of the saved filter
     string identifier?;
+    # Name of the saved filter
     string name;
+    # Description of the saved filter
     string description?;
+    # Filter expression stored in the saved filter
     record {} filters;
+    # Date and time the saved filter was created
     @jsondata:Name {value: "created_date"}
     string createdDate?;
+    # Type of the saved filter
     string 'type?;
+    # Name of the project the filter belongs to
     @jsondata:Name {value: "project_name"}
     string projectName?;
 };
@@ -1040,6 +1072,7 @@ public type GetAnalysisSegmentsQueries record {
 
 # Query Responses
 public type QueryResponses record {
+    # Results returned for the query
     string[] results?;
 };
 

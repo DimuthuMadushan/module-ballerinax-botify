@@ -9,7 +9,7 @@ This document records the sanitation done on top of the official OpenAPI specifi
 The OpenAPI specification is obtained from [wso2/api-specs](https://github.com/wso2/api-specs/blob/main/openapi/botify/botify/1.0.0/openapi.json).
 These changes are done in order to improve the overall usability, and as workarounds for some known language limitations.
 
-1. The original specification had no `summary` on any of its 48 operations (one carried the summary `Legacy`). A short summary was added to every operation in the original spec (`docs/spec/openapi.json`), applied from `docs/spec/description-decisions.json` with `tooling/apply_descriptions.py`.
+1. The original specification had no `summary` on any of its 48 operations (one carried the summary `Legacy`). A short summary was added to every operation in the original spec (`docs/spec/openapi.json`), applied from `docs/spec/description-decisions.json` with `tooling/apply_descriptions.py`. The same file also supplies the missing property and parameter descriptions (`Query`, `SavedExplorer`, `JobResults`, `AnalysisSegments`, `ProjectSavedFilter`, `QueryResponses`, `DefaultPayload.error` and the `identifier` path parameter of `getFilter`), added in the original spec only. A description was also added to the `DjangoRestToken` security definition in the original spec.
 
 ## OpenAPI cli command
 
