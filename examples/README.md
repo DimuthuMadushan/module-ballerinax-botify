@@ -2,13 +2,13 @@
 
 The `ballerinax/botify` connector provides practical examples illustrating usage in various scenarios.
 
-[//]: # (TODO: Add examples)
-1. 
-2. 
+1. [Site crawl health report](./site_crawl_health_report/site_crawl_health_report.md) - Collect a project's analyses and report crawl statistics and sitemap coverage for the latest one.
+2. [Crawl data export workflow](./crawl_data_export_workflow/crawl_data_export_workflow.md) - Validate fields against the datamodel, start a URL export and wait for it to finish.
 
 ## Prerequisites
 
-[//]: # (TODO: Add prerequisites)
+- Ballerina Swan Lake 2201.12.0 or later
+- A Botify API token with access to the project (supplied as `Authorization: Token <token>`)
 
 ## Running an example
 
