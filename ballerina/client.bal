@@ -19,7 +19,7 @@
 
 import ballerina/http;
 
-# Botify Saas API
+# Client for the Botify SaaS API, which provides SEO crawl, log and search analytics for websites. It covers projects, analyses, crawl reports, URL queries, exports and jobs.
 public isolated client class Client {
     final http:Client clientEp;
     final readonly & ApiKeysConfig apiKeyConfig;
@@ -455,7 +455,7 @@ public isolated client class Client {
     # + username - User's identifier
     # + projectSlug - Project's identifier
     # + analysisSlug - Analysis' identifier
-    # + url - (Urlencoded) Searched URL
+    # + url - Searched URL as a raw, unencoded URL (for example `https://www.example.com/`); it is URL-encoded once when the request path is built
     # + headers - Headers to be sent with the request 
     # + return - error payload 
     remote isolated function getUrlAI(string username, string projectSlug, string analysisSlug, string url, map<string|string[]> headers = {}) returns UrlAI|error {
@@ -557,7 +557,7 @@ public isolated client class Client {
     # + username - User's identifier
     # + projectSlug - Project's identifier
     # + analysisSlug - Analysis' identifier
-    # + url - (Urlencoded) Searched URL
+    # + url - Searched URL as a raw, unencoded URL (for example `https://www.example.com/`); it is URL-encoded once when the request path is built
     # + headers - Headers to be sent with the request 
     # + return - error payload 
     remote isolated function getUrlHTML(string username, string projectSlug, string analysisSlug, string url, map<string|string[]> headers = {}) returns UrlHTML|error {
@@ -573,7 +573,7 @@ public isolated client class Client {
     # + username - User's identifier
     # + projectSlug - Project's identifier
     # + analysisSlug - Analysis' identifier
-    # + url - (Urlencoded) Searched URL
+    # + url - Searched URL as a raw, unencoded URL (for example `https://www.example.com/`); it is URL-encoded once when the request path is built
     # + headers - Headers to be sent with the request 
     # + queries - Queries to be sent with the request 
     # + return - error payload 

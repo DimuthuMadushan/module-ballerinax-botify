@@ -57,5 +57,5 @@ public function main() returns error? {
 
 The Botify connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-botify/tree/main/examples/), covering the following use cases:
 
-- [Site crawl health report](../examples/site_crawl_health_report/site_crawl_health_report.md) - Collect a project's analyses and report crawl statistics and sitemap coverage for the latest one.
-- [Crawl data export workflow](../examples/crawl_data_export_workflow/crawl_data_export_workflow.md) - Validate fields against the datamodel, start a URL export and wait for it to finish.
+- [Site crawl health report](https://github.com/ballerina-platform/module-ballerinax-botify/tree/main/examples/site_crawl_health_report/site_crawl_health_report.md) - Collect a project's analyses and report crawl statistics and sitemap coverage for the latest one.
+- [Crawl data export workflow](https://github.com/ballerina-platform/module-ballerinax-botify/tree/main/examples/crawl_data_export_workflow/crawl_data_export_workflow.md) - Validate fields against the datamodel, start a URL export and wait for it to finish.

@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Botify API",
-        "description": "Botify Saas API",
+        "description": "Client for the Botify SaaS API, which provides SEO crawl, log and search analytics for websites. It covers projects, analyses, crawl reports, URL queries, exports and jobs.",
         "version": "1.0.0"
     },
     "servers": [
@@ -2320,7 +2320,7 @@
                 {
                     "name": "url",
                     "in": "path",
-                    "description": "(Urlencoded) Searched URL",
+                    "description": "Searched URL as a raw, unencoded URL (for example `https://www.example.com/`); it is URL-encoded once when the request path is built",
                     "required": true,
                     "style": "simple",
                     "explode": false,
@@ -2912,7 +2912,7 @@
                 {
                     "name": "url",
                     "in": "path",
-                    "description": "(Urlencoded) Searched URL",
+                    "description": "Searched URL as a raw, unencoded URL (for example `https://www.example.com/`); it is URL-encoded once when the request path is built",
                     "required": true,
                     "style": "simple",
                     "explode": false,
@@ -3006,7 +3006,7 @@
                 {
                     "name": "url",
                     "in": "path",
-                    "description": "(Urlencoded) Searched URL",
+                    "description": "Searched URL as a raw, unencoded URL (for example `https://www.example.com/`); it is URL-encoded once when the request path is built",
                     "required": true,
                     "style": "simple",
                     "explode": false,

@@ -115,8 +115,8 @@ function testGetUrls() returns error? {
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testGetUrlsAggs() returns error? {
     Aggs[] response = check botify->getUrlsAggs(username, projectSlug, analysisSlug,
-        jsonRequest({queries: []}));
-    test:assertTrue(response.length() > 0);
+        jsonRequest([{aggs: [{metrics: ["count"]}]}]));
+    test:assertEquals(response.length(), 1);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
@@ -152,7 +152,7 @@ function testGetUrlsExportStatus() returns error? {
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testGetUrlDetail() returns error? {
-    UrlDetail _ = check botify->getUrlDetail(username, projectSlug, analysisSlug, "https%3A%2F%2Fwww.example.com%2F");
+    UrlDetail _ = check botify->getUrlDetail(username, projectSlug, analysisSlug, "https://www.example.com/");
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
@@ -197,7 +197,7 @@ function testGetProjectCollections() returns error? {
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testProjectQuery() returns error? {
     ProjectQueryResult response = check botify->projectQuery(username, projectSlug,
-        jsonRequest({collections: ["crawl.20240301"]}));
+        jsonRequest({collections: ["crawl." + analysisSlug], query: {dimensions: [], metrics: ["crawl." + analysisSlug + ".count_urls_crawl"]}}));
     test:assertTrue(response.results is QueryResponses[]);
 }
 

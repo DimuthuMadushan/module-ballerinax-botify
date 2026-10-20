@@ -300,7 +300,14 @@ service / on ep0 {
     # http:DefaultStatusCodeResponse (error payload)
     # http:Ok (Successful operation)
     resource function post analyses/[string username]/[string projectSlug]/[string analysisSlug]/urls/aggs(@http:Query {name: "previous_crawl"} string? previousCrawl, http:Request request, "current"|"disappeared"|"new"|"search_engines_orphans"|"gsc_keywords"|"gsc_keywords_by_country" area = "current") returns DefaultPayloadDefault|AggsArrayOk {
-        return <AggsArrayOk>{body: [{status: 200}, {status: 200}]};
+        // One result per submitted aggregation query, as the API returns.
+        json|error payload = request.getJsonPayload();
+        int queryCount = payload is json[] ? payload.length() : 0;
+        Aggs[] results = [];
+        foreach int _ in 0 ..< queryCount {
+            results.push({status: 200});
+        }
+        return <AggsArrayOk>{body: results};
     }
 
     # Create a URL export

@@ -11,6 +11,10 @@ These changes are done in order to improve the overall usability, and as workaro
 
 1. The original specification had no `summary` on any of its 48 operations (one carried the summary `Legacy`). A short summary was added to every operation in the original spec (`docs/spec/openapi.json`), applied from `docs/spec/description-decisions.json` with `tooling/apply_descriptions.py`. The same file also supplies the missing property and parameter descriptions (`Query`, `SavedExplorer`, `JobResults`, `AnalysisSegments`, `ProjectSavedFilter`, `QueryResponses`, `DefaultPayload.error` and the `identifier` path parameter of `getFilter`), added in the original spec only. A description was also added to the `DjangoRestToken` security definition in the original spec.
 
+2. The `url` path parameter of `getUrlAI`, `getUrlHTML` and `getUrlDetail` was described as `(Urlencoded) Searched URL`, which invites callers to pre-encode a value that the client encodes again. Its description was changed in the original spec to ask for a raw, unencoded URL. The same wording was also written into `aligned_ballerina_openapi.json` so the client could be regenerated without a re-align; a re-align reproduces it from the original spec.
+
+3. The `info.description` was only the name `Botify Saas API`. It was rewritten in the original spec as two plain sentences describing the API, and the same text was written into `aligned_ballerina_openapi.json` so the client could be regenerated without a re-align.
+
 ## OpenAPI cli command
 
 The following command was used to generate the Ballerina client from the OpenAPI specification. The command should be executed from the repository root directory.

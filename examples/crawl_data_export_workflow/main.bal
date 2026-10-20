@@ -34,6 +34,10 @@ public function main() returns error? {
         return;
     }
 
+    if maxPolls <= 0 {
+        return error("maxPolls must be positive, got " + maxPolls.toString());
+    }
+
     // Step 2: Start the export.
     http:Request request = new;
     request.setJsonPayload({fields: fieldList});
